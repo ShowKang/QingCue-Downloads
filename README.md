@@ -16,6 +16,20 @@
 同时避免 434 MB 二进制进入 Git 历史（仓库体积、克隆成本与 LFS 依赖问题）。
 正式分发时以同一字节、同一 SHA-256 上传为 Release 附件。
 
+## 技术概览
+
+本产品是离线语音跟随提词器：音频、识别、对齐、渲染全部在本机完成。面向开发者的公开说明：
+
+| 文档 | 内容 |
+| --- | --- |
+| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | 五层架构、各层职责与层间数据流 |
+| [`docs/CAPABILITIES.md`](docs/CAPABILITIES.md) | 能力边界：能做什么、何时不保证、哪些属实验性 |
+| [`docs/TECHNOLOGY.md`](docs/TECHNOLOGY.md) | 技术难点与解决思路的抽象叙述 |
+| [`docs/TESTING.md`](docs/TESTING.md) | 已验证的测试结论与**未验证清单** |
+
+这些文档只描述架构与已验证范围，不含算法实现、参数、训练资料或内部模块命名；
+实现细节不随安装包与公开仓库分发。
+
 ## 校验
 
 ```
