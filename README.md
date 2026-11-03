@@ -7,7 +7,7 @@
 
 | 路径 | 内容 | 是否入 Git |
 | --- | --- | --- |
-| `releases/QingCue-0.1.17-r13-r2-startfix-win-x64.msi` | 安装包，434,013,474 B | **否**（`.gitignore` 排除 `*.msi`；走 Release 附件分发） |
+| `releases/QingCue-0.1.17-r13.3-e469484-win-x64.msi` | 安装包，434,040,993 B | **否**（`.gitignore` 排除 `*.msi`；走 Release 附件分发） |
 | `checksums/SHA256SUMS.txt` | 安装包 SHA-256 校验 | 是 |
 | `docs/INSTALL.md` | 安装、升级、卸载、数据位置 | 是 |
 | `CHANGELOG.md` | 变更记录 | 是 |
@@ -19,19 +19,31 @@
 ## 校验
 
 ```
-Get-FileHash .\releases\QingCue-0.1.17-r13-r2-startfix-win-x64.msi -Algorithm SHA256
+Get-FileHash .\releases\QingCue-0.1.17-r13.3-e469484-win-x64.msi -Algorithm SHA256
 ```
 
-应得到 `510C60ACD14A1F326CE9B5DBE27474A40458548AD7C55FB979FFE221EDC455C2`
-（亦可用 `certutil -hashfile <文件> SHA256`）。复制到本仓库后已重新实测一致。
+应得到 `9305BBFC7D29B4460F0C71048B7718D9EC44D02F9CB1C39230716850741014EC`
+（亦可用 `certutil -hashfile <文件> SHA256`）。构建完成后已实测一致。
 
-## 状态：**不可标记为可发布**
+## 源码追溯
 
-- 安装运行验收：**未验证**。第二阶段仅做 MSI **只读解包**检查（974 载荷 / 986.8 MB），
-  未执行全新的安装→启动→卸载→重装→修复全生命周期验收；升级链验收记录来自 r13.1→r13.2
-  的既有报告（`START_BUTTON_R13_2_REPORT.md`），不属于本次交付的验收。
+安装包内 `build-provenance.json` 记录：
+
+- `sourceRevision`：`e46948411173195c310215a85f541fbac9feec60`
+- `sourceTree`：`03783c028e6104ddf58c21eac119cea561e19867`
+- 构建时工作区干净（`sourceWorkTreeClean=true`）
+
+安装目录 `ThirdParty/` 与 `wwwroot/licenses/` 内含逐项许可原文；来源与哈希见
+`ThirdParty/SOURCES.md`。
+
+## 状态：**候选试用，非正式发布**
+
+- 安装运行验收：**已完成自动化全生命周期**（卸载→安装→启动→卸载→重装，
+  退出码均为 0；968 文件 / 1,035,068,039 B；卸载保留 `%LOCALAPPDATA%\QingCue`）。
+  仅证明安装链路，不等于功能验收。
 - 真人现场朗读：**未验证**。跟随质量与物理开口延迟无真人证据。
 - 实体手机遥控、多显示器 DPI、实际断网：**未验证**。
 - 本安装包**未做商业代码签名**；依赖微软运行时二进制签名核验。
 
 因此本仓库当前只作**候选分发**用途：可交付内部试用，不得对外宣称「已发布/已验收」。
+

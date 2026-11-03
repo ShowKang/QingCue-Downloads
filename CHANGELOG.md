@@ -1,5 +1,31 @@
 # 变更记录
 
+## 0.1.17 + r13.3（安装修订 17，2026-11-03）
+
+**发布工程修复：补齐第三方许可、重建带源码追溯的安装包。核心算法与语音链路未改。**
+
+- 按实际打包版本补齐官方许可原文并随包分发：sherpa-onnx 1.13.8（Apache-2.0）、
+  ONNX Runtime 1.28.2（MIT + ThirdPartyNotices）、QRCoder 1.6.0（MIT）、
+  SharpCompress 0.50.7（MIT）、SQLitePCLRaw 3.0.5（Apache-2.0）、SQLite 3.53.4（Public Domain）。
+  来源 tag/commit 与文件哈希记录在安装包 `ThirdParty/SOURCES.md`。
+- 补回 UI 组件与参考项目声明：RareUI、React Bits、Feel、Aerial（MIT）、robot-heads（MIT）
+  与 WebAwesome 依赖许可；双语模型同时携带 `LICENSE-icefall.txt` 与 `LICENSE-Apache-2.0.txt`。
+- `build-provenance.json` 的 `sourceRevision` 不再是 null：本包记录
+  `e46948411173195c310215a85f541fbac9feec60`，`sourceTree`
+  `03783c028e6104ddf58c21eac119cea561e19867`，构建时工作区干净。
+- 自动化验收：旧包卸载 → 新包安装 → 启动 → 卸载 → 重装，退出码均为 0；
+  安装后 968 文件 / 1,035,068,039 B；卸载保留 `%LOCALAPPDATA%\QingCue`（453 文件）。
+  应用以 .NET 8.0.30 自包含运行，固定版 WebView2 156.0.4314.42；
+  `onnxruntime.dll` 静态链接 MSVC 运行库，无需额外 VC++ 运行库。
+- Core 回归 129 项，0 失败。
+
+**已知未验证**（不得以自动化结果替代）
+
+- 真人朗读后的跟随质量与物理开口延迟。
+- 快慢语速、停顿、重复、回读、跳读的真实表现。
+- r13.2 视觉回归的真人逐页对照、不同 DPI、实体手机遥控、实际断网。
+- 本包未做商业代码签名。
+
 ## 0.1.17 + r13.2（安装修订 16，2026-10-30）
 
 **修复：开始按钮按下与释放之间跨状态推送导致无 click**
