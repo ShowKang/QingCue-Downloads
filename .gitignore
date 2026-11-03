@@ -1,0 +1,9 @@
+# 安装包不入库：分发走 Release 附件，校验文件与说明正常提交
+*.msi
+*.zip
+*.7z
+*.exe
+*.pdb
+*.log
+Thumbs.db
+.DS_Store
