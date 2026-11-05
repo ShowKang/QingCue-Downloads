@@ -12,7 +12,7 @@
 
 ## 安装
 
-1. 从 [Release 页面](https://github.com/jaychou1669/QingCue-Downloads/releases/tag/v0.1.17-r13.3) 下载 MSI 与 `SHA256SUMS.txt`。
+1. 从 [Release 页面](https://github.com/ShowKang/QingCue-Downloads/releases/tag/v0.1.17-r13.3) 下载 MSI 与 `SHA256SUMS.txt`。
 2. 校验安装包（见 `SHA256SUMS.txt`，或按 [README](../README.md) 中的 `certutil` 命令）。
 3. 双击 MSI，按安装向导完成；也可在命令行执行：
 
