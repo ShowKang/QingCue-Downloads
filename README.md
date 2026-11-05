@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/jaychou1669/QingCue-Downloads/releases/tag/v0.1.17-r13.3"><strong>下载 Windows 版</strong></a>
-  &nbsp;·&nbsp; <code>v0.1.17-r13.3</code> &nbsp;·&nbsp; Windows 10 / 11 x64
+  &nbsp;·&nbsp; <code>0.1.17 + r13.3</code> &nbsp;·&nbsp; Windows 10 / 11 x64
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@
   <img src="./assets/brand/badge-platform.png" alt="Windows 10 / 11 x64" height="22">
 </p>
 
-<p align="center"><sub>当前为候选试用版本：安装链路已完成自动化验证，功能与真人朗读的正式验收尚未完成。</sub></p>
+<p align="center"><sub>0.1.17 + r13.3 为安装与分发修订版本，语音识别与跟随能力沿用 0.1.17。</sub></p>
 
 ---
 
@@ -34,7 +34,7 @@
 
 ## 核心功能
 
-<sub><strong>已实现</strong>：本节功能均可在当前候选版本中使用。<strong>条件支持</strong>：语音跟随需要先加载本机语音模型，首次使用需联网获取，完成后可离线运行；模型就绪前可先用定速提词。</sub>
+<sub><strong>已实现</strong>：本节功能均可在当前版本中使用。<strong>条件支持</strong>：语音跟随需要先加载本机语音模型，首次使用需联网获取，完成后可离线运行；模型就绪前可先用定速提词。</sub>
 
 ### 自然语音跟随 · 逐词滑动<sub>　已实现</sub>
 
@@ -110,7 +110,7 @@
 
 ## 下载与安装
 
-- 版本：`v0.1.17-r13.3`（候选试用）
+- 版本：`0.1.17 + r13.3`（Release tag `v0.1.17-r13.3`）
 - 系统：Windows 10 / Windows 11，x64
 - 安装包：[QingCue-0.1.17-r13.3-e469484-win-x64.msi](https://github.com/jaychou1669/QingCue-Downloads/releases/download/v0.1.17-r13.3/QingCue-0.1.17-r13.3-e469484-win-x64.msi)（434,040,993 B）
 - 校验文件：[SHA256SUMS.txt](https://github.com/jaychou1669/QingCue-Downloads/releases/download/v0.1.17-r13.3/SHA256SUMS.txt)
@@ -121,11 +121,11 @@
 9305BBFC7D29B4460F0C71048B7718D9EC44D02F9CB1C39230716850741014EC
 ```
 
-安装：双击 MSI，按向导完成。安装包尚未做商业代码签名，Windows 可能弹出 SmartScreen 提示；确认文件来自本仓库并核对 SHA-256 后，选择「更多信息 → 仍要运行」。
+安装：双击 MSI，按向导完成。安装包尚未做商业代码签名，Windows 可能弹出 SmartScreen 提示；请确认文件来自本仓库并核对 SHA-256，再结合系统提示与自身判断决定是否继续。
 
 卸载：Windows 设置 → 应用 → 已安装的应用 → 轻词 QingCue → 卸载。卸载会保留 `%LOCALAPPDATA%\QingCue` 下的稿件与本地模型，彻底清理可在卸载后手动删除该目录。
 
-> 候选试用版本可交付试用，不构成正式发布。安装生命周期已做自动化验证，仅代表安装链路，不代表功能与真人朗读验收。
+> 0.1.17 + r13.3 为安装与分发修订版本，核心语音识别与跟随能力未变。安装生命周期已完成自动化验证，仅代表安装链路；真人朗读与视觉验收范围见 [TESTING.md](docs/TESTING.md)。
 
 ---
 
@@ -134,6 +134,7 @@
 - [ARCHITECTURE.md](docs/ARCHITECTURE.md)：整体分层与各层职责
 - [CAPABILITIES.md](docs/CAPABILITIES.md)：能力边界与适用场景
 - [TECHNOLOGY.md](docs/TECHNOLOGY.md)：技术难点的抽象说明
+- [INSTALL.md](docs/INSTALL.md)：安装、升级与卸载说明
 - [TESTING.md](docs/TESTING.md)：已验证结论与未验证清单
 
 **麦克风没有反应？** 在 Windows「设置 → 隐私和安全性 → 麦克风」中允许桌面应用访问，并在应用内选择正确的输入设备。
@@ -146,4 +147,4 @@
 
 ---
 
-<p align="center"><sub>轻词 QingCue · 候选试用版 · 2026</sub></p>
+<p align="center"><sub>轻词 QingCue · 0.1.17 + r13.3 · 2026</sub></p>
