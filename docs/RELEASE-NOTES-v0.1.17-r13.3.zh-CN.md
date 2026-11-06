@@ -1,6 +1,6 @@
 # 轻词 QingCue 0.1.17 + r13.3 发布说明（简体中文）
 
-本页为英文 Release 正文的中文版本，便于中文用户阅读。英文页面：[Release v0.1.17-r13.3](https://github.com/ShowKang/QingCue-Downloads/releases/tag/v0.1.17-r13.3)。
+本页为英文 Release 正文的中文版本，便于中文用户阅读。英文页面：[Release v0.1.17-r13.3](https://github.com/ShowKang/QingCue-Teleprompter/releases/tag/v0.1.17-r13.3)。
 
 ## 概述
 
@@ -26,7 +26,7 @@
 
 ## 安装
 
-1. 在 [Release 页面](https://github.com/ShowKang/QingCue-Downloads/releases/tag/v0.1.17-r13.3) 下载 `QingCue-0.1.17-r13.3-win-x64.msi` 与 `SHA256SUMS.txt`。
+1. 在 [Release 页面](https://github.com/ShowKang/QingCue-Teleprompter/releases/tag/v0.1.17-r13.3) 下载 `QingCue-0.1.17-r13.3-win-x64.msi` 与 `SHA256SUMS.txt`。
 2. 核对 SHA-256，详见 README 的校验章节。
 3. 双击 MSI 按向导安装，或执行 `msiexec /i QingCue-0.1.17-r13.3-win-x64.msi`。
 

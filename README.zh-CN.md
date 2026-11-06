@@ -9,7 +9,7 @@
 <p align="center">轻词 QingCue 是一款 Windows 桌面自然语音跟随提词器：按自己的节奏说话，稿件随声音实时同步，表达与文字始终同拍。</p>
 
 <p align="center">
-  <a href="https://github.com/ShowKang/QingCue-Downloads/releases/tag/v0.1.17-r13.3"><strong>下载 Windows 版</strong></a>
+  <a href="https://github.com/ShowKang/QingCue-Teleprompter/releases/tag/v0.1.17-r13.3"><strong>下载 Windows 版</strong></a>
   &nbsp;·&nbsp; <code>0.1.17 + r13.3</code> &nbsp;·&nbsp; Windows 10 / 11 · x64
 </p>
 
@@ -151,7 +151,7 @@
 
 ## 下载与安装
 
-在 [Release 页面](https://github.com/ShowKang/QingCue-Downloads/releases/tag/v0.1.17-r13.3) 获取安装文件：
+在 [Release 页面](https://github.com/ShowKang/QingCue-Teleprompter/releases/tag/v0.1.17-r13.3) 获取安装文件：
 
 - **轻词 QingCue 0.1.17 + r13.3（Windows x64）** — MSI 安装包，434,040,993 字节（约 414 MB）
 - `SHA256SUMS.txt` — 校验文件
@@ -221,7 +221,7 @@
 
 **在哪里反馈问题？**
 
-在 [GitHub Issues](https://github.com/ShowKang/QingCue-Downloads/issues) 选择缺陷报告或安装求助模板，附上版本号、Windows 版本与复现步骤。请勿上传包含个人或机密信息的稿件与录音。
+在 [GitHub Issues](https://github.com/ShowKang/QingCue-Teleprompter/issues) 选择缺陷报告或安装求助模板，附上版本号、Windows 版本与复现步骤。请勿上传包含个人或机密信息的稿件与录音。
 
 ---
 
@@ -256,7 +256,7 @@ Get-FileHash $msi.FullName -Algorithm SHA256
 
 ## 技术支持与反馈
 
-- **缺陷反馈与安装求助**：[GitHub Issues](https://github.com/ShowKang/QingCue-Downloads/issues)
+- **缺陷反馈与安装求助**：[GitHub Issues](https://github.com/ShowKang/QingCue-Teleprompter/issues)
 - **安装细节**：[docs/INSTALL.md](./docs/INSTALL.md)
 - **能力范围与边界**：[docs/CAPABILITIES.md](./docs/CAPABILITIES.md)
 

@@ -12,7 +12,7 @@ Speech following uses the on-device Speech Engine. The installer includes two co
 
 ## Installation
 
-1. Download the MSI and `SHA256SUMS.txt` from the [Release page](https://github.com/ShowKang/QingCue-Downloads/releases/tag/v0.1.17-r13.3).
+1. Download the MSI and `SHA256SUMS.txt` from the [Release page](https://github.com/ShowKang/QingCue-Teleprompter/releases/tag/v0.1.17-r13.3).
 2. Verify the installer against `SHA256SUMS.txt`, or follow the [verification steps](../README.md#verification) in the README.
 3. Double-click the MSI and follow the setup wizard, or install from the command line:
 

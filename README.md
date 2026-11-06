@@ -11,7 +11,7 @@
 <p align="center">QingCue is a Windows desktop teleprompter that follows your natural speech in real time, keeping your script synchronized with your delivery.</p>
 
 <p align="center">
-  <a href="https://github.com/ShowKang/QingCue-Downloads/releases/tag/v0.1.17-r13.3"><strong>Download for Windows</strong></a>
+  <a href="https://github.com/ShowKang/QingCue-Teleprompter/releases/tag/v0.1.17-r13.3"><strong>Download for Windows</strong></a>
   &nbsp;·&nbsp; <code>0.1.17 + r13.3</code> &nbsp;·&nbsp; Windows 10 / 11 · x64
 </p>
 
@@ -153,7 +153,7 @@ The floating window stays on top with an adjustable size and position, which kee
 
 ## Download and Installation
 
-Get the installer from the [Release page](https://github.com/ShowKang/QingCue-Downloads/releases/tag/v0.1.17-r13.3):
+Get the installer from the [Release page](https://github.com/ShowKang/QingCue-Teleprompter/releases/tag/v0.1.17-r13.3):
 
 - **QingCue 0.1.17 + r13.3 for Windows x64** — MSI installer, 434,040,993 bytes (about 414 MB)
 - `SHA256SUMS.txt` — checksum file for verification
@@ -223,7 +223,7 @@ No. Uninstall keeps `%LOCALAPPDATA%\QingCue` (scripts, settings, and models). De
 
 **Where do I report a problem?**
 
-Open an issue on [GitHub Issues](https://github.com/ShowKang/QingCue-Downloads/issues) using the bug report or installation help template. Include your QingCue version, Windows version, and steps to reproduce. Do not attach scripts or recordings that contain personal or confidential information.
+Open an issue on [GitHub Issues](https://github.com/ShowKang/QingCue-Teleprompter/issues) using the bug report or installation help template. Include your QingCue version, Windows version, and steps to reproduce. Do not attach scripts or recordings that contain personal or confidential information.
 
 ---
 
@@ -258,7 +258,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for the full release history.
 
 ## Support and Feedback
 
-- **Bug reports and installation help:** [GitHub Issues](https://github.com/ShowKang/QingCue-Downloads/issues)
+- **Bug reports and installation help:** [GitHub Issues](https://github.com/ShowKang/QingCue-Teleprompter/issues)
 - **Installation details:** [docs/INSTALL.md](./docs/INSTALL.md)
 - **Capabilities and boundaries:** [docs/CAPABILITIES.md](./docs/CAPABILITIES.md)
 
