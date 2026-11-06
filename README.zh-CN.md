@@ -283,7 +283,7 @@ Get-FileHash $msi.FullName -Algorithm SHA256
     </td>
   </tr>
   <tr>
-    <td align="center" colspan="3">
+    <td align="center" colspan="3" width="500">
       <sub>TRAE CN 官方品牌素材待确认，当前以品牌文字展示。</sub>
     </td>
   </tr>
