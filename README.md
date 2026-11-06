@@ -284,9 +284,12 @@ QingCue is developed with the assistance of modern AI-powered development tools.
       <sub>TRAE</sub>
     </td>
   </tr>
+  <tr>
+    <td align="center" colspan="3">
+      <sub>TRAE CN official brand asset is pending confirmation; the brand name is shown as text.</sub>
+    </td>
+  </tr>
 </table>
-
-<p align="center"><sub>TRAE CN official brand asset is pending confirmation; the brand name is shown as text.</sub></p>
 
 ---
 
