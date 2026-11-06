@@ -263,7 +263,7 @@ Get-FileHash $msi.FullName -Algorithm SHA256
     <td align="center" width="33%">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="./assets/brand/ai-tools/openai-wordmark-white.svg">
-        <img src="./assets/brand/ai-tools/openai-wordmark-black.svg" alt="OpenAI" height="24">
+        <img src="./assets/brand/ai-tools/openai-wordmark-black.svg" alt="OpenAI" height="16">
       </picture>
       <br>
       <sub><strong>Codex</strong> · OpenAI</sub>
@@ -271,7 +271,7 @@ Get-FileHash $msi.FullName -Algorithm SHA256
     <td align="center" width="33%">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="./assets/brand/ai-tools/claude-wordmark-ivory.svg">
-        <img src="./assets/brand/ai-tools/claude-wordmark-slate.svg" alt="Claude" height="24">
+        <img src="./assets/brand/ai-tools/claude-wordmark-slate.svg" alt="Claude" height="16">
       </picture>
       <br>
       <sub><strong>Claude</strong> · Anthropic</sub>
