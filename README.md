@@ -197,24 +197,31 @@ Fixed-speed prompting is available immediately and needs no model and no microph
 ## FAQ
 
 **Speech following is not responding.**
+
 Allow desktop apps to use the microphone in **Windows Settings → Privacy & security → Microphone**, then select the correct input device in QingCue. Make sure the primary speech model has finished downloading.
 
 **Do I need to download the model?**
+
 For speech following, yes. The installer includes two compact starter models, but the primary model (about 900 MB) is downloaded in-app on first use for full quality. Fixed-speed prompting needs neither a model nor a microphone.
 
 **Can I use it offline?**
+
 Yes. After the primary model is ready, prompting, following, and script management work without a network connection. Only the first model download requires internet access.
 
 **I am moving to another computer. Can I avoid downloading the model again?**
+
 Copy the model from your data directory and import it in Settings on the new machine.
 
 **What happens if my reading differs from the script?**
+
 QingCue anchors progress to the script and advances when it hears matching speech. Repeats, re-reads, and quick corrections keep the position on the current sentence; skipping ahead catches up when you reach later text. Long improvised passages that leave the script may hold the view in place until you return to the text.
 
 **Does uninstalling remove my scripts?**
+
 No. Uninstall keeps `%LOCALAPPDATA%\QingCue` (scripts, settings, and models). Delete that folder manually for a full cleanup.
 
 **Where do I report a problem?**
+
 Open an issue on [GitHub Issues](https://github.com/ShowKang/QingCue-Downloads/issues) using the bug report or installation help template. Include your QingCue version, Windows version, and steps to reproduce. Do not attach scripts or recordings that contain personal or confidential information.
 
 ---
