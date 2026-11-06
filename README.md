@@ -256,6 +256,38 @@ See [CHANGELOG.md](./CHANGELOG.md) for the full release history.
 
 ---
 
+## AI-Assisted Development
+
+QingCue is developed with the assistance of modern AI-powered development tools.
+
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./assets/brand/ai-tools/openai-wordmark-white.svg">
+        <img src="./assets/brand/ai-tools/openai-wordmark-black.svg" alt="OpenAI" height="24">
+      </picture>
+      <br>
+      <sub><strong>Codex</strong> · OpenAI</sub>
+    </td>
+    <td align="center" width="33%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./assets/brand/ai-tools/claude-wordmark-ivory.svg">
+        <img src="./assets/brand/ai-tools/claude-wordmark-slate.svg" alt="Claude" height="24">
+      </picture>
+      <br>
+      <sub><strong>Claude</strong> · Anthropic</sub>
+    </td>
+    <td align="center" width="33%">
+      <strong>TRAE CN</strong>
+      <br>
+      <sub>TRAE · official brand asset pending confirmation</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## Support and Feedback
 
 - **Bug reports and installation help:** [GitHub Issues](https://github.com/ShowKang/QingCue-Teleprompter/issues)

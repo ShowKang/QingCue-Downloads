@@ -254,6 +254,38 @@ Get-FileHash $msi.FullName -Algorithm SHA256
 
 ---
 
+## AI 辅助开发工具
+
+轻词 QingCue 的开发过程得到了现代 AI 辅助开发工具的支持。
+
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./assets/brand/ai-tools/openai-wordmark-white.svg">
+        <img src="./assets/brand/ai-tools/openai-wordmark-black.svg" alt="OpenAI" height="24">
+      </picture>
+      <br>
+      <sub><strong>Codex</strong> · OpenAI</sub>
+    </td>
+    <td align="center" width="33%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./assets/brand/ai-tools/claude-wordmark-ivory.svg">
+        <img src="./assets/brand/ai-tools/claude-wordmark-slate.svg" alt="Claude" height="24">
+      </picture>
+      <br>
+      <sub><strong>Claude</strong> · Anthropic</sub>
+    </td>
+    <td align="center" width="33%">
+      <strong>TRAE CN</strong>
+      <br>
+      <sub>TRAE · 官方品牌素材待确认</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## 技术支持与反馈
 
 - **缺陷反馈与安装求助**：[GitHub Issues](https://github.com/ShowKang/QingCue-Teleprompter/issues)
