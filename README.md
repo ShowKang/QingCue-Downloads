@@ -60,8 +60,9 @@ The sequence shows the behavior that matters most: the highlight starts moving w
 | **Natural Speech Following** | Advances the highlight and scrolling at your real speaking pace. No foot pedal, remote, or manual paging. |
 | **Word-level Highlighting** | The highlight moves word by word, so your eye never scans a full line to find its place. |
 | **Continuous Text Following** | Text scrolls continuously between sentences; the reading position stays stable through sentence handoffs. |
-| **Full Teleprompter Workbench** | Script tree, current sentence, context, reading controls, and progress in a single window. |
-| **Focus Reading Mode** | Emphasizes the current sentence and nearby context, reducing visual noise from the full script. |
+| **Sentence Handoff** | When a sentence is finished, the highlight moves forward and the view scrolls to the next line without a visible jump. |
+| **Pause and Repeat Tolerance** | Pauses hold the position; repeated lines, re-reads, and quick corrections keep progress anchored to the current sentence. |
+| **Fixed-speed Prompting** | With speech following off, the script advances at a set pace. No model and no microphone required. |
 | **Floating Teleprompter Window** | A separate always-on-top window that can sit beside your camera or recording app. |
 | **Script Management** | Import plain text and Markdown scripts, organize them in folders, and keep the original text untouched. |
 | **Reading Preferences** | Adjust font size, line height, paragraph spacing, colors, and following behavior for your screen and viewing distance. |
@@ -162,7 +163,7 @@ Get the installer from the [Release page](https://github.com/ShowKang/QingCue-Do
 
 1. Download the MSI and `SHA256SUMS.txt` from the Release page.
 2. Verify the installer using the [SHA-256 instructions](#verification).
-3. Double-click the MSI and follow the setup wizard. Silent install is also supported:
+3. Double-click the MSI and follow the setup wizard. Installation from the command line is also supported:
 
    ```bat
    msiexec /i "<downloaded-installer>.msi"
@@ -170,7 +171,7 @@ Get the installer from the [Release page](https://github.com/ShowKang/QingCue-Do
 
 4. Launch QingCue from the Start menu or the desktop shortcut.
 
-The installer places the app under your user profile and creates Start menu and desktop entries. Administrative rights are not required for a per-user install.
+The installer places the app under your user profile and creates Start menu and desktop entries.
 
 > The installer is not commercially code-signed, so Windows may show a SmartScreen warning. Confirm the file came from this repository and matches the SHA-256 value before choosing **More info → Run anyway**. Do not disable system security checks to install it.
 
