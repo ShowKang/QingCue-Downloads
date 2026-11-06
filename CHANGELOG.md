@@ -1,38 +1,36 @@
-# 版本记录
+# Changelog
 
-## 0.1.17 + r13.3（2026-11-03）
+## 0.1.17 + r13.3 (2026-11-03)
 
-安装与分发修订，提词与语音跟随能力不变。
+Installation and distribution revision. Prompting and speech following are unchanged.
 
-- 补齐第三方组件许可与版权文件，随安装包分发。
-- 提供 SHA-256 校验文件，便于核对下载内容。
-- 完善安装包溯源信息，便于核对构件与版本。
-- 保持既有系统要求与安装方式，支持覆盖升级。
-- 完成安装生命周期与核心自动化回归验证。
-- 升级后稿件、设置与本地模型按既有机制保留。
+- Added complete third-party license and attribution files, distributed with the installer.
+- Published SHA-256 checksums so downloads can be verified.
+- Improved package provenance details for build and version checks.
+- System requirements and installation flow unchanged; in-place upgrade supported.
+- Completed installation lifecycle and core automated regression checks.
+- Scripts, settings, and local models are preserved through an upgrade.
 
-**尚未验证**：真人朗读体验、视觉回归、多 DPI、外设与断网场景。
+Known limitations: live human-read following quality, visual review across DPI and multi-monitor setups, external devices, and a fully offline first-model scenario have not been verified.
 
-## 0.1.17 + r13.2（2026-10-30）
+## 0.1.17 + r13.2 (2026-10-30)
 
-- 修复开始按钮在状态切换时可能无响应的问题。
-- 播放按钮改为按状态更新，减少不必要的界面重绘。
-- 产品版本仍为 0.1.17，安装修订递增，支持覆盖升级。
-- 语音跟随、稿件数据与使用方式未变。
+- Fixed an unresponsive Start button during state transitions.
+- Start/play control now updates by state, reducing unnecessary redraws.
+- Product version remains 0.1.17; the install revision increments and in-place upgrade is supported.
+- Speech following, script data, and the reading workflow are unchanged.
 
-**尚未验证**：真人朗读体验、完整安装生命周期、多 DPI 与外设场景。
+## 0.1.17 (base release)
 
-## 0.1.17（基础版）
-
-- 完善提词工作台、悬浮提词与稿件管理。
-- 语音跟随、连续滚动与个性化阅读设置可用。
-- 保留连续文本跟随与本地运行能力。
+- Refined the teleprompter workbench, floating window, and script management.
+- Speech following, continuous scrolling, and reading preferences available.
+- Retained continuous text following and local processing.
 
 ## 0.1.16
 
-- 调整开始阶段的跟随表现。
-- 不改动稿件结构与使用方式。
+- Tuned following behavior at the start of a session.
+- Script structure and usage flow unchanged.
 
 ## 0.1.15
 
-- 调整跟随节奏，优化朗读过程中的视觉连续性。
+- Tuned following cadence to improve visual continuity while reading.

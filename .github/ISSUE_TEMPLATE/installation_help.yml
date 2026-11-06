@@ -1,0 +1,104 @@
+name: Installation Help
+description: Get help with downloading, verifying, installing, or upgrading QingCue on Windows.
+title: "[Install] "
+labels: ["installation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for installation and first-run problems: download, checksum verification, SmartScreen warnings, MSI errors, upgrade, uninstall, or model download.
+        Do not post passwords, license keys, or personal information.
+
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Where Does It Fail?
+      options:
+        - Downloading the installer
+        - Verifying the SHA-256 checksum
+        - Running the MSI
+        - SmartScreen or Windows security prompt
+        - First launch
+        - First model download
+        - Upgrading an existing installation
+        - Uninstalling
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: qingcue-version
+    attributes:
+      label: QingCue Version
+      description: The installer file name or the version shown in the app. Use "not installed yet" if the app never started.
+      placeholder: "0.1.17 + r13.3"
+    validations:
+      required: true
+
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windows Version
+      description: Windows edition and build number.
+      placeholder: "Windows 10 22H2, build 19045"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue Description
+      description: What happens, and at which step?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: List the exact steps, including the command line if you installed manually.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should have happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: Include the exact error text or dialog message if one is shown.
+    validations:
+      required: true
+
+  - type: textarea
+    id: checksum-result
+    attributes:
+      label: SHA-256 Verification Result
+      description: Paste the hash your computer calculated, and whether it matches 9305BBFC7D29B4460F0C71048B7718D9EC44D02F9CB1C39230716850741014EC.
+      placeholder: "Get-FileHash output, or certutil output"
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Relevant Screenshots
+      description: Drag in screenshots of the dialog or error. Crop or blur anything private.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I downloaded the installer from the official Release page of this repository.
+          required: true
+        - label: I have not included passwords, license keys, or personal information.
+          required: true

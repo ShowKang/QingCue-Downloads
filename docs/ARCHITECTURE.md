@@ -1,40 +1,40 @@
-# 架构概览
+# Architecture Overview
 
-本文面向希望了解轻词 QingCue 整体构成的读者，只描述产品层面的架构与设计方向，不涉及具体实现、参数或内部流程。
+This document describes QingCue at the product level: how the application is put together and which design directions it follows. It does not cover implementation methods, internal parameters, or internal workflows.
 
-## 1. 运行形态
+## 1. Form Factor
 
-轻词 QingCue 是一款 Windows 桌面应用，面向 Windows 10 / 11 x64。安装后以本地程序运行，界面、语音处理与数据都在用户机器上完成。
+QingCue is a Windows desktop application for Windows 10 / 11 x64. Once installed it runs locally; the interface, speech processing, and data all stay on the user's machine.
 
-## 2. 主要组成
+## 2. Main Components
 
-- **桌面应用外壳**：负责窗口、置顶、单实例、快捷键与安装升级等平台能力。
-- **本地界面**：负责稿件排版、连续滚动、高亮与阅读相关的视觉呈现。
-- **本地语音处理**：接收麦克风输入，在本机完成语音识别，为界面提供朗读进度。
-- **本地数据管理**：保存稿件、设置与诊断数据，数据不离开本机。
+- **Desktop shell** — windows, always-on-top behavior, single-instance handling, shortcuts, and installation/upgrade.
+- **Local interface** — script layout, continuous scrolling, highlighting, and reading presentation.
+- **Local speech processing** — captures microphone input, performs speech recognition on the device, and reports reading progress to the interface.
+- **Local data management** — stores scripts, settings, and diagnostics; data does not leave the device.
 
-各组成部分通过本地进程内的接口协作，不依赖云端服务。
+Components cooperate through in-process interfaces and do not depend on cloud services.
 
-## 3. 隐私与安全设计
+## 3. Privacy and Security Design
 
-- 语音识别在本机执行，音频不上传。
-- 稿件、设置与诊断数据保存在本机，由用户自行管理。
-- 无需注册账号，不存在账号体系与云端同步。
-- 除首次获取语音模型外，日常使用不需要外部网络连接。
-- 安装包未做商业代码签名；下载页面提供 SHA-256 校验信息。
+- Speech recognition runs on the device; audio is not uploaded.
+- Scripts, settings, and diagnostics are stored locally and managed by the user.
+- No account is required; there is no account system or cloud sync.
+- Apart from the first model download, everyday use needs no external network connection.
+- The installer is not commercially code-signed; SHA-256 verification is published with each release.
 
-## 4. 分发与运行
+## 4. Distribution and Operation
 
-- **安装版**：每用户安装，数据保存在用户目录，卸载默认保留数据。
-- **便携版**：数据随程序目录存放，便于移动。
-- **离线运行**：本地语音模型准备完成后，断网不影响提词与语音跟随。
+- **Installed app** — per-user installation with data in the user directory; uninstall keeps data by default.
+- **Portable mode** — data stored beside the program for easy relocation.
+- **Offline operation** — once the local speech models are ready, losing the network does not affect prompting or speech following.
 
-## 5. 设计原则
+## 5. Design Principles
 
-1. **本地优先**：能在本机完成的，不放到云端。
-2. **可退化**：语音模型或麦克风不可用时，仍可作为定速提词器使用。
-3. **体验优先**：架构选择服务于阅读连续性，而不是反过来要求用户适应技术限制。
+1. **Local first.** Anything that can run on the device does not run in the cloud.
+2. **Graceful degradation.** If a model or microphone is unavailable, the app still works as a fixed-speed teleprompter.
+3. **Experience first.** Architecture choices serve reading continuity rather than asking the user to adapt to technical constraints.
 
-## 6. 公开边界
+## 6. Public Boundary
 
-本文不展开识别与同步的具体方法、实现取值、内部模块命名与诊断字段定义；这些内容保留在私有仓库。功能范围见 [CAPABILITIES.md](CAPABILITIES.md)，验证结论见 [TESTING.md](TESTING.md)。
+This document does not describe recognition or synchronization methods, implementation values, internal module names, or diagnostic field definitions; those remain in a private repository. For feature scope see [CAPABILITIES.md](CAPABILITIES.md), and for verification scope see [TESTING.md](TESTING.md).

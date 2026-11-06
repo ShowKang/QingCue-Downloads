@@ -1,55 +1,55 @@
-# 技术难点与本地运行要求
+# Engineering Challenges and Local Processing Requirements
 
-本文以方向性叙述说明轻词 QingCue 需要解决的工程问题与取舍，不提供可复现的实现细节。
+This document explains, at a direction-setting level, the engineering problems QingCue addresses and the trade-offs behind its behavior. It does not provide reproducible implementation details.
 
-## 1. 实时语音处理的挑战
+## 1. Real-Time Speech Processing
 
-语音是连续到来的，识别结果却只能一段一段给出。要让画面跟得上说话，需要同时满足：
+Speech arrives continuously, while recognition results arrive in segments. Keeping the view in step with the speaker requires all three of the following:
 
-- **实时**：从开口到画面反应，延迟要落在可感知的合理范围内。
-- **长稳**：连续使用数十分钟，不应出现越用越慢或内存持续增长。
-- **本机运行**：推理在用户的普通电脑上完成，算力与内存都有限。
+- **Real time** — the gap between speaking and visual response must stay within a perceptible, reasonable range.
+- **Sustained stability** — over extended sessions, performance must not degrade or memory grow without bound.
+- **On-device execution** — inference runs on ordinary user hardware with limited compute and memory.
 
-这三点互相牵制：想更实时，就要更频繁地更新结果；想更稳定，就要更克制地推进画面。
+These goals pull against each other: more responsiveness calls for more frequent updates, while stability calls for more restrained movement.
 
-## 2. 自然表达与文字同步
+## 2. Natural Delivery vs. Text Synchronization
 
-真实朗读不是匀速播放文本：
+Real reading is not uniform text playback:
 
-- 语速会变，句子中间也会突然加快或放慢；
-- 会有停顿、思考、重复、回读，也会跳过大段内容；
-- 会有口误、改口和稿外的即兴表达。
+- pace changes, including sudden acceleration or slowing mid-sentence;
+- pauses, thinking, repetition, re-reading, and skipped passages;
+- slips of the tongue, corrections, and off-script improvisation.
 
-提词器要做的不是逐字核对，而是在这些真实行为下仍然给出一个可信的阅读位置。难点在于：识别结果本身存在不确定，而用户看到的进度必须确定、连续、可依赖。
+A teleprompter cannot check every character; it has to deliver a trustworthy reading position under these conditions. The difficulty is that recognition output is uncertain while the displayed position must be definite, continuous, and dependable.
 
-## 3. 连续阅读的视觉体验
+## 3. Visual Continuity of Reading
 
-识别是离散的事件，阅读是连续的视觉运动，两者存在天然颗粒度差异。
+Recognition produces discrete events; reading is continuous visual motion, and the two have inherently different granularity.
 
-- 更新太频繁，画面会抖；
-- 更新太慢，快读时会明显滞后；
-- 过度平滑，语速突变时又跟不上。
+- updating too often makes the view jitter;
+- updating too slowly lags noticeably during fast reading;
+- over-smoothing fails to keep up when the pace changes abruptly.
 
-产品选择偏稳定：宁可短暂慢半拍，也不让画面来回跳动。相关取舍会直接影响快读、停顿与跨句衔接的观感。
+QingCue favors stability: it would rather lag briefly than bounce the view back and forth. This choice directly shapes fast passages, pauses, and sentence handoffs.
 
-## 4. 本地运行要求
+## 4. Local Processing Requirements
 
-- 语音识别依赖本地模型，首次使用需要在应用内下载（约 900 MB），下载完成后可离线运行。
-- 模型加载与推理会占用一定的内存与 CPU；低配置设备上的表现会受影响。
-- 音频、稿件与设置都留在本机，不需要账号，也不经过云端。
-- 安装包自包含运行环境，用户无需预装开发工具或额外运行库。
+- Speech recognition depends on local models: two compact starter models ship with the installer (about 101.7 MB combined), and the primary model is downloaded in-app on first use (about 900 MB). Offline use is available afterwards.
+- Model loading and inference consume memory and CPU; performance on low-end hardware is affected.
+- Audio, scripts, and settings stay on the device; no account is required and nothing passes through the cloud.
+- The installer is self-contained, so users do not need to install developer tools or extra runtimes.
 
-## 5. 取舍方向
+## 5. Trade-Offs
 
-| 目标 | 选择 | 代价 |
+| Goal | Choice | Cost |
 | --- | --- | --- |
-| 隐私与可控 | 本地识别，不上传音频 | 依赖用户设备性能 |
-| 阅读稳定 | 进度以稳定为先 | 语速突变时可能有短时滞后 |
-| 环境普适 | 自包含安装包 | 安装包体积较大 |
-| 长期可用 | 模型本地保存，可离线 | 首次需要下载模型 |
+| Privacy and control | Local recognition, no audio upload | Depends on user hardware performance |
+| Reading stability | Stability takes priority for progress | Brief lag possible during abrupt pace changes |
+| Broad compatibility | Self-contained installer | Larger installer size |
+| Long-term availability | Models stored locally, usable offline | Model download required on first use |
 
-## 6. 不在公开文档中展开的部分
+## 6. Out of Scope for Public Documentation
 
-识别与同步的具体方法、判定条件、参数取值、调试过程、内部评测材料与诊断字段定义均保留在私有仓库，不在公开文档中说明。
+Recognition and synchronization methods, decision thresholds, parameter values, debugging procedures, internal evaluation material, and diagnostic field definitions remain in a private repository and are not described publicly.
 
-功能范围见 [CAPABILITIES.md](CAPABILITIES.md)，验证结论见 [TESTING.md](TESTING.md)。
+For feature scope see [CAPABILITIES.md](CAPABILITIES.md), and for verification scope see [TESTING.md](TESTING.md).

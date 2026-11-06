@@ -1,4 +1,5 @@
-# 安装包不入库：分发走 Release 附件，校验文件与说明正常提交
+# Installers are not committed: distribution happens through Release assets.
+# Checksums and documentation are committed normally.
 *.msi
 *.zip
 *.7z

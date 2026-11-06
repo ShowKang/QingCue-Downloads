@@ -1,0 +1,69 @@
+name: Feature Request
+description: Suggest a capability or improvement for QingCue.
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Describe the problem you want to solve rather than only the solution you have in mind; that makes it easier to evaluate.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Need
+      description: What are you trying to do, and where does QingCue get in the way today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: How would you like this to work? Rough sketches or examples are welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Workarounds or other tools you have tried.
+    validations:
+      required: false
+
+  - type: input
+    id: qingcue-version
+    attributes:
+      label: QingCue Version
+      description: The version you are currently using.
+      placeholder: "0.1.17 + r13.3"
+    validations:
+      required: false
+
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windows Version
+      description: Windows edition and build number.
+      placeholder: "Windows 11 23H2, build 22631"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Use cases, scripts types, recording setups, or anything else that helps explain the request.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues and discussions before opening this request.
+          required: true
+        - label: This request does not contain personal or confidential information.
+          required: true

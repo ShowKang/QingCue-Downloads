@@ -1,93 +1,93 @@
-# 能力边界
+# Capabilities and Boundaries
 
-本文说明轻词 QingCue 能做什么、在什么条件下不保证，以及哪些体验尚未验收。未验证项统一列在 [TESTING.md](TESTING.md)。
+This document describes what QingCue does, the conditions under which behavior is not guaranteed, and which areas remain unverified. Unverified areas are listed in [TESTING.md](TESTING.md).
 
-状态说明：
+Status definitions:
 
-- **已实现**：功能可用，安装版可体验。
-- **条件支持**：在特定前提下成立，超出前提不保证。
-- **未验证**：尚无真人 / 真机证据，不作为承诺。
+- **Available** — the feature is usable in the installed app.
+- **Conditional** — works under specific conditions; outside them, no guarantee is made.
+- **Not verified** — no live human or hardware evidence yet; not a commitment.
 
-## 1. 自然语音跟随
+## 1. Natural Speech Following
 
-**已实现；本地语音模型为条件支持。**
+**Available; the local speech model is conditional.**
 
-打开麦克风后，按稿件朗读，画面随语音推进，无需手动翻页。语音识别在本机完成。
+With the microphone enabled, read the script aloud and the view advances with your voice. No manual paging is needed. Speech recognition runs on your device.
 
-**条件支持：** 安装包不含默认识别模型，首次使用需在应用内下载（约 900 MB），完成后可离线运行；不使用语音跟随时，定速提词不需要模型。
+**Conditional:** the installer includes two compact starter models (about 101.7 MB combined). The primary speech model (about 900 MB) is downloaded in-app on first use; speech following works offline afterwards. Fixed-speed prompting does not require any model.
 
-**不保证的情况：**
+**Not guaranteed when:**
 
-- 环境噪声接近或高于朗读音量，或多人同时说话；
-- 麦克风距离过远、增益过低，或被其他程序独占；
-- 朗读内容与稿件明显不一致（自由发挥、插入大段稿外内容）；
-- 方言、口音或专业术语密集，超出模型覆盖范围。
+- ambient noise is at or above reading volume, or several people speak at once;
+- the microphone is too far away, gain is too low, or another application holds exclusive access;
+- the reading differs substantially from the script (free improvisation, long passages outside the script);
+- dialects, accents, or dense technical terminology fall outside the model's coverage.
 
-## 2. 词级高亮与连续滚动
+## 2. Word-level Highlighting and Continuous Scrolling
 
-**已实现。** 高亮以词为单位移动，画面连续滚动，前后文保持在视野中。
+**Available.** The highlight moves word by word, the view scrolls continuously, and surrounding lines stay in view.
 
-**边界：**
+**Boundaries:**
 
-- 不同窗口尺寸、缩放比例与显示器 DPI 下的观感尚未逐一验收。
-- 窗口过窄或字号过大时，可见范围减少，阅读节奏会受影响。
+- Appearance across window sizes, scaling factors, and display DPI has not been verified item by item.
+- Very narrow windows or very large text reduce the visible area and affect reading rhythm.
 
-## 3. 停顿、重复、回读与跳读
+## 3. Pauses, Repeats, Re-reads, and Skips
 
-| 行为 | 状态 | 用户可见表现 |
+| Behavior | Status | What the user sees |
 | --- | --- | --- |
-| 正常停顿 | 已实现 | 画面停在当前位置，不因静默跳到别处 |
-| 重复同一句 | 已实现 | 停留在当前句，不会把进度推到后面 |
-| 回读上一句 | 条件支持 | 通常保持当前位置；大幅回读不做强保证 |
-| 跳过整句或整段 | 条件支持 | 读到后文时会向前赶上；跨度很大时可能先停留再追上 |
-| 口误 / 改口 | 条件支持 | 通常不会带偏进度；连续大量口误时可能停在原处 |
-| 稿件外自由发言 | 不保证 | 不会因稿外内容推进；长时间离稿后可能停在原处 |
+| Normal pause | Available | The view holds its position and does not jump during silence. |
+| Repeating a sentence | Available | Progress stays on the current sentence instead of moving ahead. |
+| Re-reading the previous sentence | Conditional | The position is usually kept; large re-reads are not strongly guaranteed. |
+| Skipping a sentence or paragraph | Conditional | The view catches up when later text is read; large jumps may hold first, then catch up. |
+| Slips of the tongue and corrections | Conditional | Progress usually stays anchored; many consecutive corrections may hold it in place. |
+| Speaking outside the script | Not guaranteed | Off-script speech does not advance the view; extended departures may hold it in place. |
 
-以上行为的真人朗读表现尚未验收。
+Live human-read behavior for these cases has not been verified.
 
-## 4. 跨句衔接
+## 4. Sentence Handoff
 
-**已实现。** 当前句读完后，高亮前移，画面滚动到下一句。
+**Available.** When the current sentence is finished, the highlight moves forward and the view scrolls to the next sentence.
 
-- 依赖稿件分段合理；单句过长或段落结构异常时，衔接观感下降。
+- Depends on sensible script segmentation; unusually long sentences or irregular paragraph structure reduce the quality of the handoff.
 
-## 5. 悬浮提词窗口
+## 5. Floating Teleprompter Window
 
-**已实现。** 提供独立置顶窗口，位置与大小可调，可与其他应用并排使用。
+**Available.** A separate always-on-top window with adjustable position and size that can run alongside other applications.
 
-- 与主窗口的摆放是否互相遮挡由用户自行控制；
-- 多显示器与混合 DPI 下的窗口行为未验证。
+- Whether the floating window and main window overlap is controlled by the user.
+- Window behavior on multiple monitors and mixed DPI is not verified.
 
-## 6. 定速提词
+## 6. Fixed-Speed Prompting
 
-**已实现。** 关闭语音跟随时，按设定节奏自动推进。
+**Available.** With speech following disabled, the script advances at a configured pace.
 
-- 不需要模型，也不占用麦克风；
-- 与真实语速脱节是该模式的固有特性。
+- Needs no model and no microphone.
+- Drift from your actual speaking pace is inherent to this mode.
 
-## 7. 稿件与数据
+## 7. Scripts and Data
 
-**已实现。** 支持导入纯文本与 Markdown 稿件；稿件、设置与模型保存在本机。
+**Available.** Plain text and Markdown scripts can be imported; scripts, settings, and models stay on your device.
 
-**边界：**
+**Boundaries:**
 
-- 表格、嵌套列表、图文混排等复杂排版按纯文本语义处理，不做保真还原；
-- 超长稿件的首屏加载与检索未做专门优化承诺。
+- Tables, nested lists, and mixed media layouts are treated as plain text and are not reproduced faithfully.
+- First-screen loading and search for very long scripts are not specifically optimized.
 
-## 8. 运行环境
+## 8. Runtime Environment
 
-**已实现。** Windows 10 / 11 x64，MSI 安装，自包含 .NET 8 运行时，WebView2 随包提供，无需单独安装 VC++ 运行库。
+**Available.** Windows 10 / 11 x64, MSI installation, self-contained runtime, no separate VC++ redistributable.
 
-**条件支持 / 未验证：**
+**Conditional / not verified:**
 
-- 企业策略限制下的界面运行时行为；
-- 多显示器、不同 DPI 混合桌面；
-- 实体手机、遥控器等外设联动；
-- 断网状态下的首次模型获取（模型齐备后可离线）。
+- interface behavior under enterprise policy restrictions;
+- multiple monitors with mixed DPI;
+- external devices such as phones or remotes;
+- first model download while offline (offline use works once all models are present).
 
-## 9. 明确的非目标
+## 9. Explicit Non-Goals
 
-- 多人协作、云端同步、账号体系；
-- 自动生成讲稿、改写稿件或语义问答；
-- 将朗读内容上传、转写归档或用于训练；
-- 对朗读质量（音量、情感、节奏）做评价或打分。
+- multi-user collaboration, cloud sync, or accounts;
+- automatic script generation, rewriting, or semantic question answering;
+- uploading or archiving readings, or using them for training;
+- scoring the quality of a delivery (volume, emotion, pacing).

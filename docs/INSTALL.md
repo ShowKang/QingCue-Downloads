@@ -1,54 +1,54 @@
-# 安装说明
+# Installation Guide
 
-## 系统要求
+## System Requirements
 
-- Windows 10 / 11，64 位
-- x64 架构
-- MSI 安装包
+- Windows 10 or Windows 11, 64-bit
+- x64 architecture
+- MSI installer
 
-安装包自包含 .NET 8 运行时与 WebView2，无需另行安装；VC++ 运行库无需单独安装。
+The installer is self-contained. No separate runtime, VC++ redistributable, or developer tooling is required.
 
-语音跟随需要本地语音模型。安装包不含默认识别模型，首次使用需在应用内下载（约 900 MB），下载完成后可离线运行。
+Speech following uses the on-device Speech Engine. The installer includes two compact starter models (about 101.7 MB combined); the primary speech model (about 900 MB) is downloaded in-app on first use. Once it is available, speech following works offline.
 
-## 安装
+## Installation
 
-1. 从 [Release 页面](https://github.com/ShowKang/QingCue-Downloads/releases/tag/v0.1.17-r13.3) 下载 MSI 与 `SHA256SUMS.txt`。
-2. 校验安装包（见 `SHA256SUMS.txt`，或按 [README](../README.md) 中的 `certutil` 命令）。
-3. 双击 MSI，按安装向导完成；也可在命令行执行：
+1. Download the MSI and `SHA256SUMS.txt` from the [Release page](https://github.com/ShowKang/QingCue-Downloads/releases/tag/v0.1.17-r13.3).
+2. Verify the installer against `SHA256SUMS.txt`, or follow the [verification steps](../README.md#verification) in the README.
+3. Double-click the MSI and follow the setup wizard, or install from the command line:
 
+   ```bat
+   msiexec /i "<downloaded-installer>.msi"
    ```
-   msiexec /i <下载的 MSI 文件名>
-   ```
 
-4. 默认安装到当前用户 `%LOCALAPPDATA%\Programs\QingCue`，并在桌面与开始菜单创建入口。
+4. The app installs per user under `%LOCALAPPDATA%\Programs\QingCue` and creates Start menu and desktop entries.
 
-## 升级
+## Upgrading
 
-保持升级标识不变、递增安装修订，可直接覆盖已安装版本；既有用户数据目录沿用。
+Keep the upgrade identity unchanged and increment the install revision. The new MSI installs over an existing version and keeps the existing user data directory.
 
-## 卸载
+## Uninstalling
 
-Windows「设置 → 应用 → 已安装的应用」中找到轻词 QingCue，选择卸载。
+Open **Settings → Apps → Installed apps**, find QingCue, and choose Uninstall.
 
-卸载默认保留 `%LOCALAPPDATA%\QingCue`（稿件、设置与本地模型）；如需彻底清除，请在卸载后手动删除该目录。
+Uninstall keeps `%LOCALAPPDATA%\QingCue` by default (scripts, settings, and local models). Delete that folder manually if you want a complete removal.
 
-## 数据位置
+## Data Locations
 
-- 安装版：`%LOCALAPPDATA%\QingCue`（稿件、设置、诊断与本地模型）。
-- 便携版：程序目录旁 `portable.flag` 生效，数据写入同目录 `Data`；移动前请先退出程序，并连同 `Data` 一起复制。
-- 语音模型：在应用内按需下载，保存在上述数据目录；纯定速提词不需要模型。
+- **Installed app:** `%LOCALAPPDATA%\QingCue` holds scripts, settings, diagnostics, and local models.
+- **Portable mode:** a `portable.flag` file next to the executable redirects data to a `Data` folder in the same directory. Exit the app before moving it and copy `Data` along with the program.
+- **Speech models:** downloaded on demand in the app and stored in the data directory. Fixed-speed prompting does not need a model.
 
-## 第三方许可
+## Third-Party Licenses
 
-安装目录下提供第三方组件的许可原文与版权说明：
+License texts and attributions for bundled components are available in the installation directory:
 
-- `ThirdParty\`：随包组件的许可原文、来源与校验信息（逐项见 `ThirdParty\SOURCES.md`）。
-- `wwwroot\licenses\`：界面组件的许可声明。
+- `ThirdParty\` — license texts, sources, and verification details for bundled components (see `ThirdParty\SOURCES.md` for the itemized list).
+- `wwwroot\licenses\` — license notices for interface components.
 
-许可文本覆盖实际打包组件，随安装包分发。
+The notices cover the components actually packaged and ship with the installer.
 
-## 注意
+## Notes
 
-- 安装包未做商业代码签名，首次运行可能出现 SmartScreen 提示；请核对来源与 SHA-256 后再决定是否继续，不要关闭系统安全检查。
-- 安装与卸载的自动化验证已完成；真人朗读、视觉回归、多 DPI、外设与断网验收尚未完成，范围见 [TESTING.md](TESTING.md)。
-- 首次下载模型需要网络；下载完成后可离线使用。
+- The installer is not commercially code-signed. Windows may show a SmartScreen warning on first run. Verify the source and SHA-256 value before continuing, and do not disable system security checks.
+- Installation and uninstallation have been verified through automated checks. Live human-read following, visual regression, multi-DPI, external devices, and offline scenarios remain out of the verified scope; see [TESTING.md](TESTING.md).
+- The first model download requires a network connection. Speech following works offline afterwards.

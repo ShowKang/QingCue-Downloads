@@ -1,32 +1,32 @@
-# 验证状态
+# Verification Scope and Known Limitations
 
-本文只说明已验证范围与未验证范围。自动化结论不代表每个人在每种环境下的实际体验。
+This document states what has been verified and what has not. Automated results do not represent every user's experience in every environment.
 
-## 1. 已完成（自动化）
+## 1. Completed (Automated)
 
-- 安装、启动、卸载、重装的完整生命周期验证；
-- 核心功能回归：稿件加载、播放与暂停、句子推进、设置保存、诊断导出等；
-- 安装包完整性：SHA-256 与发布记录一致；
-- 第三方组件许可与版权文件随包分发；
-- 模型交付方式：安装包不含默认识别模型；首次使用需在应用内下载，下载完成后可离线运行。
+- Full lifecycle verification: install, launch, uninstall, and reinstall;
+- Core functional regression: script loading, start and pause, sentence advancement, settings persistence, and diagnostics export;
+- Installer integrity: SHA-256 matches the published value;
+- Third-party licenses and attribution files ship with the package;
+- Model delivery: the installer includes two compact starter models (about 101.7 MB combined); the primary model is downloaded in-app on first use and works offline afterwards.
 
-本轮验证未发现失败项。
+No failures were found in this round of verification.
 
-## 2. 未验证（不得视为已通过）
+## 2. Not Verified (Must Not Be Treated as Passed)
 
-1. 真人现场朗读的跟随质量与物理开口延迟（从出声到画面反应的实测时延）。
-2. 快慢语速、停顿、重复、回读、跳读在真实朗读中的表现。
-3. 界面改动的真人逐页视觉复核。
-4. 不同 DPI、多显示器与缩放比例下的排版与滚动表现。
-5. 实体手机、遥控器等外设联动。
-6. 实际断网场景，包括首次模型获取失败与恢复。
-7. 商业代码签名：当前安装包未签名，首次运行可能出现 SmartScreen 提示。
-8. 企业网络策略或代理环境下，界面运行时与模型下载的行为。
+1. Following quality and physical response latency during live human reading (measured from speaking to visual response).
+2. Behavior with fast or slow speech, pauses, repetition, re-reading, and skipped passages in live reading.
+3. Page-by-page human visual review of interface changes.
+4. Layout and scrolling across DPI settings, multiple monitors, and scaling levels.
+5. External devices such as phones or remotes.
+6. Real offline scenarios, including failure and recovery of the first model download.
+7. Commercial code signing: the installer is currently unsigned, so a SmartScreen prompt may appear on first run.
+8. Interface behavior and model download under enterprise network policies or proxies.
 
-## 3. 如何理解这些结论
+## 3. How to Read These Results
 
-- 自动化覆盖的是可判定的行为与流程，不覆盖主观感受与物理时延。
-- 「未发现失败」不等于「体验已验收」；公开表述应同时引用未验证清单。
-- 建议正式使用前，在自己的稿件与设备上完成一次试读。
+- Automated verification covers determinable behavior and flows, not subjective experience or physical latency.
+- "No failures found" does not mean the experience has been accepted; public statements should reference the unverified list as well.
+- Before production use, read a short section of your own script on your own device.
 
-细节记录保留在内部资料，不随公开仓库分发。
+Detailed records remain in internal materials and are not distributed with this public repository.

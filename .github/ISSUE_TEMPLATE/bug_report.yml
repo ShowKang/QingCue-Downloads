@@ -1,0 +1,82 @@
+name: Bug Report
+description: Report a problem with QingCue so it can be reproduced and fixed.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please do not include scripts, recordings, passwords, license keys, or other personal information. A short, reproducible description is the most helpful thing you can provide.
+
+  - type: input
+    id: qingcue-version
+    attributes:
+      label: QingCue Version
+      description: Found in the app (About / Settings) or in the installer file name.
+      placeholder: "0.1.17 + r13.3"
+    validations:
+      required: true
+
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windows Version
+      description: Windows edition and build number.
+      placeholder: "Windows 11 23H2, build 22631"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue Description
+      description: What went wrong, in one or two sentences.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: List the exact actions that lead to the problem.
+      placeholder: |
+        1. Open QingCue and load a script
+        2. Select a microphone and press Start
+        3. Read the first sentence
+        4. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened, including any message shown in the app.
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Relevant Screenshots
+      description: Drag in screenshots or a short screen recording. Crop or blur anything you do not want to share publicly.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I have removed personal or confidential content from screenshots and attachments.
+          required: true
+        - label: I searched existing issues before opening this report.
+          required: true
